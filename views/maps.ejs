@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juvi JEWERLY</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/images/Icons/home-icon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header navbar-logo">
+                <a class="navbar-brand" href="/">Juvi <b>JEWELRY</b></a>
+            </div>
+        </div>
+    </nav>
+    <!-- Section 1 -->
+    <section class="section-1" id="section-1">
+      <div class="section-1-banner center">
+          <h1>Juvi <b>JEWERLY</b></h1>
+          <h1>Store</h1>
+      </div>
+      <div class="branch-container">
+          <div class="branch">
+              <div class="map-container" id="map"></div>
+              <div class="branch-details">
+                  <p>Elie Wiesel St 2, Rishon LeTsiyon</p>
+                  <p>+972 54-7777777</p>
+                  <p>Sunday-Friday</p>
+                  <p>10:00-20:00</p>
+              </div>
+          </div>
+      </div>
+  
+  </section>
+
+        <!-- Slideshow -->
+        <div class="slideshow"></div>
+      
+
+    <footer>
+        <div class="footer">
+            <!-- <div class="row">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </div> -->
+
+            <div class="row">
+                <ul>
+                    <li><a href="contact">Contact us</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                JUVI Copyright © 2023 Juvi - All rights reserved ||
+            </div>
+        </div>
+    </footer>
+    <script src="/asests/js/script.js"></script>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: { lat: 31.96987, lng: 34.77257 },
+          zoom: 12,
+                  
+        });
+        new google.maps.Marker({ // TODO :: just add description for the red point
+          position: { lat: 31.96987, lng: 34.77257 },
+          map,
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3xsqtuuzminYxX_s9sqzILXU2Wv5OrRo&callback=initMap"></script>
+  
+</body>
+
+</html>

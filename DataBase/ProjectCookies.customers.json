@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "650b5d9b6d22234c71c63070"
+  },
+  "Username": "yuvalmanajer",
+  "phoneNumber": "0526632873",
+  "Address": "rishonlezion",
+  "Orders": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6512175c5c2652953c9b729e"
+  },
+  "Username": "omrimanajer",
+  "phoneNumber": "0536789576",
+  "Address": "holon",
+  "Orders": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651218555c2652953c9b72c4"
+  },
+  "Username": "ormanajer",
+  "phoneNumber": "0541234559",
+  "Address": "telaviv",
+  "Orders": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651219505c2652953c9b72d0"
+  },
+  "Username": "ela",
+  "phoneNumber": "0526547389",
+  "Address": "telaviv",
+  "Orders": [],
+  "__v": 0
+}]

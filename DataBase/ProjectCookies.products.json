@@ -1,0 +1,281 @@
+[{
+  "_id": {
+    "$oid": "6508f82034cacfa1b7a93413"
+  },
+  "ProductName": "Drop Earings",
+  "Category": "6508f50d34cacfa1b7a9340e",
+  "Price": 400,
+  "Description": "Mixed cuts, White, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5661683_png/mesmera-drop-earrings--mixed-cuts--white--rhodium-plated-swarovski-5661683.png"
+},
+{
+  "_id": {
+    "$oid": "6508fb8334cacfa1b7a93416"
+  },
+  "ProductName": "Hoop Earings",
+  "Category": "6508f50d34cacfa1b7a9340e",
+  "Price": 1000,
+  "Description": "Statement, Octagon shape, White",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5671087_png/lucent-hoop-earrings--statement--octagon-shape--white-swarovski-5671087.png"
+},
+{
+  "_id": {
+    "$oid": "6508fc0034cacfa1b7a93417"
+  },
+  "ProductName": "Clip Earings",
+  "Category": "6508f50d34cacfa1b7a9340e",
+  "Price": "800",
+  "Description": "Octagon cut, White, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_900/5669913_png/mesmera-clip-earrings--octagon-cut--white--rhodium-plated-swarovski-5669913.png"
+},
+{
+  "_id": {
+    "$oid": "6508fc8634cacfa1b7a93418"
+  },
+  "ProductName": "Stud Earings",
+  "Category": "6508f50d34cacfa1b7a9340e",
+  "Price": 400,
+  "Description": "Trilliant cut, White, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5619498_png/millenia-stud-earrings--trilliant-cut--white--rhodium-plated-swarovski-5619498.png"
+},
+{
+  "_id": {
+    "$oid": "6509894334cacfa1b7a93419"
+  },
+  "ProductName": "Drop Earings",
+  "Category": "6508f50d34cacfa1b7a9340e",
+  "Price": 1200,
+  "Description": "Asymmetrical design, Mixed cuts, Multicolored",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5656417_png_var2/gema-drop-earrings--asymmetrical-design--mixed-cuts--long--multicolored--rhodium-plated-swarovski-5656417.png"
+},
+{
+  "_id": {
+    "$oid": "650989c934cacfa1b7a9341a"
+  },
+  "ProductName": "Drop Earings",
+  "Category": "6508f50d34cacfa1b7a9340e",
+  "Price": 500,
+  "Description": "Octagon cut, White, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_900/5612673_png_var2/millenia-hoop-earrings--octagon-cut--white--rhodium-plated-swarovski-5612673.png"
+},
+{
+  "_id": {
+    "$oid": "65098fb334cacfa1b7a9341b"
+  },
+  "ProductName": "Cocktail Ring",
+  "Category": "6508f60634cacfa1b7a9340f",
+  "Price": 400,
+  "Description": "Round cut, Pavé, White, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5636267_png/constella-cocktail-ring--round-cut--pav%C3%A9--white--rhodium-plated-swarovski-5636267.png"
+},
+{
+  "_id": {
+    "$oid": "6509904334cacfa1b7a9341e"
+  },
+  "ProductName": "Hyperbola Ring",
+  "Category": "6508f60634cacfa1b7a9340f",
+  "Price": 600,
+  "Description": "Neutral zirconia, Mixed cuts, Double band",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5665345_png/hyperbola-cocktail-ring--carbon-neutral-zirconia--mixed-cuts--double-bands--white--rhodium-plated-swarovski-5665345.png"
+},
+{
+  "_id": {
+    "$oid": "6509912b34cacfa1b7a9341f"
+  },
+  "ProductName": "Vittore Ring",
+  "Category": "6508f60634cacfa1b7a9340f",
+  "Price": 500,
+  "Description": "Drop cut, White, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5563966_png/vittore-ring--drop-cut--white--rhodium-plated-swarovski-5563966.png"
+},
+{
+  "_id": {
+    "$oid": "650b535f76ff3d8d41dd6e6e"
+  },
+  "ProductName": "Soul Open Ring",
+  "Category": "6508f60634cacfa1b7a9340f",
+  "Price": 500,
+  "Description": "Heart, White, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_900/5512854_png/attract-soul-open-ring--heart--white--rhodium-plated-swarovski-5512854.png"
+},
+{
+  "_id": {
+    "$oid": "650b53a776ff3d8d41dd6e6f"
+  },
+  "ProductName": "Millenia Ring",
+  "Category": "6508f60634cacfa1b7a9340f",
+  "Price": 400,
+  "Description": "Pear cut, Pavé, White, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5638776_png/millenia-cocktail-ring--pear-cut--pav%C3%A9--white--rhodium-plated-swarovski-5638776.png"
+},
+{
+  "_id": {
+    "$oid": "650b54e676ff3d8d41dd6e70"
+  },
+  "ProductName": "Lucent Ring",
+  "Category": "6508f60634cacfa1b7a9340f",
+  "Price": 800,
+  "Description": "Octagon cut, White",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5666587_png_var1/lucent-cocktail-ring--octagon-cut--white-swarovski-5666587.png"
+},
+{
+  "_id": {
+    "$oid": "650b563976ff3d8d41dd6e74"
+  },
+  "ProductName": "Gema Bracelet",
+  "Category": "6508f6e234cacfa1b7a93410",
+  "Price": 600,
+  "Description": "Mixed cuts, Multicolored",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5656427_png/gema-bracelet--mixed-cuts--multicolored--rhodium-plated-swarovski-5656427.png"
+},
+{
+  "_id": {
+    "$oid": "650b568c76ff3d8d41dd6e75"
+  },
+  "ProductName": "Matrix Bracelet",
+  "Category": "6508f6e234cacfa1b7a93410",
+  "Price": 500,
+  "Description": "Round cut, Pink, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5648930_png/matrix-tennis-bracelet--round-cut--pink--rhodium-plated-swarovski-5648930.png"
+},
+{
+  "_id": {
+    "$oid": "650b56fb76ff3d8d41dd6e76"
+  },
+  "ProductName": "Angelic Bracelet",
+  "Category": "6508f6e234cacfa1b7a93410",
+  "Price": 600,
+  "Description": "Round cut, Pavé, Small, White",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5071173_png/angelic-bracelet--round-cut--pav%C3%A9--small--white--rhodium-plated-swarovski-5071173.png"
+},
+{
+  "_id": {
+    "$oid": "650b57a976ff3d8d41dd6e77"
+  },
+  "ProductName": "Rota Bracelet",
+  "Category": "6508f6e234cacfa1b7a93410",
+  "Price": 700,
+  "Description": "Mixed cuts, White, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5650354_png/rota-bangle--mixed-cuts--white--rhodium-plated-swarovski-5650354.png"
+},
+{
+  "_id": {
+    "$oid": "650b581f76ff3d8d41dd6e78"
+  },
+  "ProductName": "Lifelong Bracelet",
+  "Category": "6508f6e234cacfa1b7a93410",
+  "Price": 700,
+  "Description": "Knot, White, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5368552_png/lifelong-bangle--knot--white--rhodium-plated-swarovski-5368552.png"
+},
+{
+  "_id": {
+    "$oid": "650b58a976ff3d8d41dd6e79"
+  },
+  "ProductName": "Bluelight Bracelet",
+  "Category": "6508f6e234cacfa1b7a93410",
+  "Price": 900,
+  "Description": "Mixed cuts, Blue, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5666018_png/gema-bracelet--mixed-cuts--blue--rhodium-plated-swarovski-5666018.png"
+},
+{
+  "_id": {
+    "$oid": "650b592476ff3d8d41dd6e7a"
+  },
+  "ProductName": "Mesmera Bracelet",
+  "Category": "6508f6e234cacfa1b7a93410",
+  "Price": 500,
+  "Description": "Mixed cuts, Scattered design",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5661530_png/mesmera-bracelet--mixed-cuts--scattered-design--white--rhodium-plated-swarovski-5661530.png"
+},
+{
+  "_id": {
+    "$oid": "650b59cb76ff3d8d41dd6e7b"
+  },
+  "ProductName": "Choker Necklace",
+  "Category": "6508f71334cacfa1b7a93411",
+  "Price": 1000,
+  "Description": "Mixed cuts, White, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5661523_png/mesmera-choker--mixed-cuts--white--rhodium-plated-swarovski-5661523.png"
+},
+{
+  "_id": {
+    "$oid": "650b5a5176ff3d8d41dd6e7f"
+  },
+  "ProductName": "Y Necklace",
+  "Category": "6508f71334cacfa1b7a93411",
+  "Price": 1400,
+  "Description": "Mixed cuts, White, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5661520_png_var3/mesmera-y-necklace--mixed-cuts--white--rhodium-plated-swarovski-5661520.png"
+},
+{
+  "_id": {
+    "$oid": "650b5b3e76ff3d8d41dd6e80"
+  },
+  "ProductName": "Mesmera Necklace",
+  "Category": "6508f71334cacfa1b7a93411",
+  "Price": 900,
+  "Description": "Mixed cuts, White, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5665242_png/mesmera-necklace--mixed-cuts--white--rhodium-plated-swarovski-5665242.png"
+},
+{
+  "_id": {
+    "$oid": "650b5bb476ff3d8d41dd6e81"
+  },
+  "ProductName": "Pink Necklace",
+  "Category": "6508f71334cacfa1b7a93411",
+  "Price": 600,
+  "Description": "Mixed cuts, Pink, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5668275_png/mesmera-pendant--mixed-cuts--pink--rhodium-plated-swarovski-5668275.png"
+},
+{
+  "_id": {
+    "$oid": "650b5c2c76ff3d8d41dd6e82"
+  },
+  "ProductName": "Gema Necklace",
+  "Category": "6508f71334cacfa1b7a93411",
+  "Price": 800,
+  "Description": "Mixed cuts, Multicolored",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5656397_png/gema-necklace--mixed-cuts--multicolored--rhodium-plated-swarovski-5656397.png"
+},
+{
+  "_id": {
+    "$oid": "650b5c8576ff3d8d41dd6e83"
+  },
+  "ProductName": "Dextera Necklace",
+  "Category": "6508f71334cacfa1b7a93411",
+  "Price": 1500,
+  "Description": "Mixed cuts, White, Gold-tone plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5665497_png/dextera-necklace--mixed-cuts--white--gold-tone-plated-swarovski-5665497.png"
+},
+{
+  "_id": {
+    "$oid": "650b5ce276ff3d8d41dd6e84"
+  },
+  "ProductName": "Tennis Necklace",
+  "Category": "6508f71334cacfa1b7a93411",
+  "Price": 600,
+  "Description": "Mixed cuts, Pink, Rhodium plated",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5666165_png/matrix-tennis-necklace--mixed-cuts--pink--rhodium-plated-swarovski-5666165.png"
+},
+{
+  "_id": {
+    "$oid": "650b5d8376ff3d8d41dd6e85"
+  },
+  "ProductName": "Extra Necklace",
+  "Category": "6508f71334cacfa1b7a93411",
+  "Price": 1800,
+  "Description": "Statement, Mixed cuts, Large, White",
+  "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5675546_png/dextera-necklace--statement--mixed-cuts--large--white--rhodium-plated-swarovski-5675546.png"
+},
+{
+  "_id": {
+    "$oid": "65121e125c2652953c9b73b4"
+  },
+  "ProductName": "Drop Bracelet",
+  "Category": "6508f6e234cacfa1b7a93410",
+  "Price": 800,
+  "Description": "Statement, Octagon shape, White\t",
+  "Picture": "assets/images/dropbracelet.jpg",
+  "__v": 0
+}]

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juvi JEWERLY</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="images/Icons/home-icon.png">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+  <script>
+    if(!localStorage["cart"])
+        localStorage.setItem("cart", JSON.stringify([]));
+  </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar">
+        <div class="container">
+            <div class="navbar-header navbar-logo">
+                <a class="navbar-brand" href="/">Juvi <b>JEWELRY</b></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right navbar-buttons">
+                    <% if (!userLoggedIn) { %>
+                        <li><a href="login">Login</a></li>
+                        <li><a href="register">Register</a></li>
+                    <% } else if (isAdmin == false){ %>
+                        <li><a href="account" id="myacount">My Acount</a></li>
+                        <li><a href="/logout" id="logout-button">Logout</a></li>
+                    <% } else if (isAdmin == true){ %>
+                        <li><a href="admin" id="myacount">Admin panel</a></li>
+                        <li><a href="account" id="myacount">My Acount</a></li>
+                        <li><a href="/logout" id="logout-button">Logout</a></li>
+                    <% } %>
+                    <li>
+                        <a href="cart" id="cart-btn" style="text-decoration: none; color: white; display: none;">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="section-3" id="section-3">
+        <h1 class="section-3-heading">My Cart</h1>
+        <div class="container-categories">
+            <div class="row">
+                <table class="cart-table" id="cartTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Image</th>
+                            <th>Product Name</th>
+                            <th>Amount</th>
+                            <th>Price </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        <span class="total-price">Total Price: &#8362; <b id ="totalPricePlaceholder"> 0</b> </span>      
+        <button type="button" id="continuePurchase-btn" class="btn btn-primary" data-toggle="modal" data-target="#paymentModal">Continue Purchase</button>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Payment Details</h4>
+                </div>
+                <br />
+                <div class="checkout-container">
+                    <div id="Checkout" class="inline">
+                        <h1>Address To Delivery</h1>
+                        <form>
+                            <div class="form-group">
+                                <label for="PaymentAmount">Payment amount</label>
+                                <div class="amount-placeholder">
+                                    <span id="verifyTotalPricePlaceholder">0</span>&#8362;
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" class="form-control" type="text" maxlength="255" />
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" class="form-control" type="text" maxlength="255" />
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <input type="text" id="country" class="form-control" type="text" maxlength="255" />
+                            </div>
+                            <div class="zip-code-group form-group">
+                                <label for="zip">ZIP/Postal code</label>
+                                <div class="input-container">
+                                    <input id="zip" class="form-control" type="text" minxLength="5" maxlength="7" />
+                                </div>
+                            </div>
+                            <button id="PayButton" class="btn btn-block btn-success submit-button" type="submit">
+                                <span class="submit-button-lock"></span>
+                                <span class="align-middle">Place an Order</span>
+                            </button>
+                        </form>
+                    </div>
+                  </div>
+                  <br />
+
+    <!-- Order Confirmation Modal -->
+    <div id="orderConfirmationModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Order Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    The order is approved, thank you for buying Juvi Jewelry.
+                </div>
+                <div class="modal-footer">
+                    <a href="/" class="btn btn-primary">Return</a>ֿֿֿֿֿ
+                </div>
+            </div>
+        </div>
+    </div>
+            
+    </div>
+
+    
+    </section>
+ 
+    <!-- End of Section -->
+
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <ul>
+                    <li><a href="contact">Contact us</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                JUVI Copyright © 2023 Juvi - All rights reserved ||
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Check if the token exists
+            var token = localStorage.getItem("token");
+
+            // Get the Login and Register button elements
+            var loginButton = document.querySelector("a[href='login']");
+            var registerButton = document.querySelector("a[href='register']");
+
+            // Get the Logout button element
+            var accountButton = document.getElementById("myacount");
+            var logoutButton = document.getElementById("logout-button");
+            var cartButton = document.getElementById("cart-btn");
+
+            // If token exists, show the Logout button and handle the logout action
+            if (token) {
+                // Hide Login and Register buttons
+                if (loginButton) {
+                    loginButton.style.display = "none";
+                }
+                if (registerButton) {
+                    registerButton.style.display = "none";
+                }
+
+                if (logoutButton) {
+                    logoutButton.style.display = "block";
+                    cartButton.style.display = "block";
+                    accountButton.style.display = "none";
+                    logoutButton.addEventListener("click", function () {
+                        localStorage.removeItem("token");
+                        window.location.href = "login";
+                    });
+                }
+            }
+        });
+
+        document.getElementById('submitPayment').addEventListener('click', function() {
+            $('#orderConfirmationModal').modal('show');
+        });
+
+    </script>
+    <script src="/assets/js/cart.js"></script>
+
+</body>
+
+</html>

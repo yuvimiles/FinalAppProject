@@ -1,0 +1,188 @@
+[{
+  "_id": {
+    "$oid": "650c97d2538c388eaaf9eebe"
+  },
+  "UserId": "650b5d9b6d22234c71c63070",
+  "Products": [
+    {
+      "id": "650b559976ff3d8d41dd6e73",
+      "ProductName": "Trilogy Bracelet",
+      "Description": "Round cut, White, Rhodium plated",
+      "Price": "400",
+      "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5465384_png/subtle-trilogy-bracelet--round-cut--white--rhodium-plated-swarovski-5465384.png",
+      "amount": "2"
+    },
+    {
+      "id": "6508f82034cacfa1b7a93413",
+      "ProductName": "Drop Earings",
+      "Description": "Mixed cuts, White, Rhodium plated",
+      "Price": "400",
+      "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5661683_png/mesmera-drop-earrings--mixed-cuts--white--rhodium-plated-swarovski-5661683.png",
+      "amount": "4"
+    },
+    {
+      "id": "65098fb334cacfa1b7a9341b",
+      "ProductName": "Cocktail Ring",
+      "Description": "Round cut, Pavé, White, Rhodium plated",
+      "Price": "400",
+      "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5636267_png/constella-cocktail-ring--round-cut--pav%C3%A9--white--rhodium-plated-swarovski-5636267.png",
+      "amount": "1"
+    }
+  ],
+  "Address": "test",
+  "City": "hshhs",
+  "Country": "isjral",
+  "Zip": "12345",
+  "Price": 2800,
+  "Date": {
+    "$date": "2023-09-21T19:21:54.148Z"
+  },
+  "Status": "Pending for approval",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "650cb47c538c388eaaf9f05c"
+  },
+  "UserId": "650b5d9b6d22234c71c63070",
+  "Products": [
+    {
+      "id": "650b559976ff3d8d41dd6e73",
+      "ProductName": "Trilogy Bracelet",
+      "Description": "Round cut, White, Rhodium plated",
+      "Price": "400",
+      "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5465384_png/subtle-trilogy-bracelet--round-cut--white--rhodium-plated-swarovski-5465384.png",
+      "amount": "2"
+    },
+    {
+      "id": "650b59cb76ff3d8d41dd6e7b",
+      "ProductName": "Choker Necklace",
+      "Description": "Mixed cuts, White, Rhodium plated",
+      "Price": "1000",
+      "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5661523_png/mesmera-choker--mixed-cuts--white--rhodium-plated-swarovski-5661523.png",
+      "amount": "1"
+    }
+  ],
+  "Address": "mmkk",
+  "City": "klkkk",
+  "Country": "jjjjjjjjj",
+  "Zip": "66666",
+  "Price": 1800,
+  "Date": {
+    "$date": "2023-09-21T21:24:12.901Z"
+  },
+  "Status": "Pending for approval",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651219905c2652953c9b72e5"
+  },
+  "UserId": "651219505c2652953c9b72d0",
+  "Products": [
+    {
+      "id": "650b59cb76ff3d8d41dd6e7b",
+      "ProductName": "Choker Necklace",
+      "Description": "Mixed cuts, White, Rhodium plated",
+      "Price": "1000",
+      "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5661523_png/mesmera-choker--mixed-cuts--white--rhodium-plated-swarovski-5661523.png",
+      "amount": "3"
+    },
+    {
+      "id": "650b559976ff3d8d41dd6e73",
+      "ProductName": "Trilogy Bracelet",
+      "Description": "Round cut, White, Rhodium plated",
+      "Price": "400",
+      "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5465384_png/subtle-trilogy-bracelet--round-cut--white--rhodium-plated-swarovski-5465384.png",
+      "amount": "2"
+    }
+  ],
+  "Address": "telaviv",
+  "City": "telaviv",
+  "Country": "israel",
+  "Zip": "1234567",
+  "Price": 3800,
+  "Date": {
+    "$date": "2023-09-25T23:36:48.339Z"
+  },
+  "Status": "Pending for approval",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65121b1f5c2652953c9b7324"
+  },
+  "UserId": "651219505c2652953c9b72d0",
+  "Products": [
+    {
+      "id": "6508f82034cacfa1b7a93413",
+      "ProductName": "Drop Earings",
+      "Description": "Mixed cuts, White, Rhodium plated",
+      "Price": "400",
+      "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5661683_png/mesmera-drop-earrings--mixed-cuts--white--rhodium-plated-swarovski-5661683.png",
+      "amount": "1",
+      "totalPrice": "400"
+    },
+    {
+      "id": "650b59cb76ff3d8d41dd6e7b",
+      "ProductName": "Choker Necklace",
+      "Description": "Mixed cuts, White, Rhodium plated",
+      "Price": "1000",
+      "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5661523_png/mesmera-choker--mixed-cuts--white--rhodium-plated-swarovski-5661523.png",
+      "amount": "3"
+    }
+  ],
+  "Address": "telaviv",
+  "City": "telaviv",
+  "Country": "israel",
+  "Zip": "1234567",
+  "Price": 3400,
+  "Date": {
+    "$date": "2023-09-25T23:43:27.973Z"
+  },
+  "Status": "Pending for approval",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651220345c2652953c9b7432"
+  },
+  "UserId": "651219505c2652953c9b72d0",
+  "Products": [
+    {
+      "id": "650b59cb76ff3d8d41dd6e7b",
+      "ProductName": "Choker Necklace",
+      "Description": "Mixed cuts, White, Rhodium plated",
+      "Price": "1000",
+      "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5661523_png/mesmera-choker--mixed-cuts--white--rhodium-plated-swarovski-5661523.png",
+      "amount": "1",
+      "totalPrice": "1000"
+    },
+    {
+      "id": "650b563976ff3d8d41dd6e74",
+      "ProductName": "Gema Bracelet",
+      "Description": "Mixed cuts, Multicolored",
+      "Price": "600",
+      "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5656427_png/gema-bracelet--mixed-cuts--multicolored--rhodium-plated-swarovski-5656427.png",
+      "amount": "1"
+    },
+    {
+      "id": "6508f82034cacfa1b7a93413",
+      "ProductName": "Drop Earings",
+      "Description": "Mixed cuts, White, Rhodium plated",
+      "Price": "400",
+      "Picture": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_2.0,f_auto,w_675/5661683_png/mesmera-drop-earrings--mixed-cuts--white--rhodium-plated-swarovski-5661683.png",
+      "amount": "1"
+    }
+  ],
+  "Address": "telaviv",
+  "City": "telaviv",
+  "Country": "israel",
+  "Zip": "1234567",
+  "Price": 2000,
+  "Date": {
+    "$date": "2023-09-26T00:05:08.285Z"
+  },
+  "Status": "Pending for approval",
+  "__v": 0
+}]

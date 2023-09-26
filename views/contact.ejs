@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juvi JEWERLY</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/images/Icons/home-icon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header navbar-logo">
+                <a class="navbar-brand" href="/">Juvi <b>JEWELRY</b></a>
+            </div>
+        </div>
+    </nav>
+    <script src="assets/js/script.js"></script>
+</body>
+    <!-- Contact Form -->
+    <section style="padding: 70px 20px 20px; flex: 1;">
+        <h1>Contact Us</h1>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3" style="margin-bottom: 10px;">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
+    <div class="slideshow"></div>
+
+</section>
+<footer>
+    <div class="footer">
+        <div class="row">
+            <ul>
+                <li><a href="contact">Contact us</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Career</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            JUVI Copyright © 2023 Juvi - All rights reserved ||
+        </div>
+    </div>
+</footer>
+<script src="assets/js/script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Check if the token exists
+        var token = localStorage.getItem("token");
+
+        // Get the Login and Register button elements
+        var loginButton = document.querySelector("a[href='login']");
+        var registerButton = document.querySelector("a[href='register']");
+
+        // Get the Logout button element
+        var accountButton = document.getElementById("myacount");
+        var logoutButton = document.getElementById("logout-button");
+        var cartButton = document.getElementById("cart-btn");
+
+        // If token exists, show the Logout button and handle the logout action
+        if (token) {
+            // Hide Login and Register buttons
+            if (loginButton) {
+                loginButton.style.display = "none";
+            }
+            if (registerButton) {
+                registerButton.style.display = "none";
+            }
+
+            // Show the Logout button and handle logout
+            if (logoutButton) {
+                logoutButton.style.display = "block";
+                cartButton.style.display = "block";
+                accountButton.style.display = "none";
+                logoutButton.addEventListener("click", function () {
+                    // Remove the token from localStorage
+                    localStorage.removeItem("token");
+                    // Redirect to login
+                    window.location.href = "login";
+                });
+            }
+        }
+    });
+
+</script>
+</body>
+
+</html>

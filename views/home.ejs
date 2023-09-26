@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juvi JEWERLY</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="images/Icons/home-icon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header navbar-logo">
+                <a class="navbar-brand" href="/">Juvi <b>JEWELRY</b></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right navbar-buttons">
+                    <% if (!userLoggedIn) { %>
+                        <li><a href="login">Login</a></li>
+                        <li><a href="register">Register</a></li>
+                    <% } else if (isAdmin == false){ %>
+                        <li><a href="account" id="myacount">My Acount</a></li>
+                        <li><a href="/logout" id="logout-button">Logout</a></li>
+                    <% } else if (isAdmin == true){ %>
+                        <li><a href="admin" id="myacount">Admin panel</a></li>
+                        <li><a href="account" id="myacount">My Acount</a></li>
+                        <li><a href="/logout" id="logout-button">Logout</a></li>
+                    <% } %>
+                    <li>
+                        <a href="cart" id="cart-btn" style="text-decoration: none; color: white; display: none;">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Section 1 -->
+    <section class="section-1" id="section-1">
+
+        <!-- Navbar1 -->
+        <nav class="navbar1">
+            <a href="#section-3" class="navbar-link">Categories</a>
+            <a href="#section-4" class="navbar-link">About us</a>
+            <a href="/maps" class="navbar-link">𖡡 Stores</a>
+        </nav>
+        <!-- End of Navbar -->
+
+        <!-- Video -->
+        <div class="video-container">
+            <video src="images/jclip.mp4" controls autoplay muted loop></video>
+        </div>
+        <!-- End of Video -->
+        <!-- Banner -->
+        <div class="section-1-banner center">
+            <h1>Juvi <b>JEWERLY</b></h1>
+            <p>Ignite Your Dreams</p>
+            <button type="button">Buy Now</button>
+        </div>
+        <!-- End of Banner -->
+
+        <!-- Slideshow -->
+        <div class="slideshow"></div>
+        <!-- End of Slideshow -->
+    </section>
+    <!-- End of Section 1 -->
+
+    <!-- Section 3 -->
+    <section class="section-3" id="section-3">
+        <!-- Section 3 Heading -->
+        <h1 class="section-3-heading">Categories</h1>
+        <!-- End of Section 3 Heading -->
+
+        <!-- Section 3 Content -->
+        <div class="container-categories">
+            <% for(let i = 0; i < categories.length; i ++){ %>
+                <div class="box">
+                    <span><%= categories[i].CategoryName %></span>
+                    <a href="/<%= categories[i].CategoryName %>">
+                        <img src="<%= categories[i].Image %>">
+                    </a>
+                </div>
+            <% } %>
+        </div>
+        </div>
+    </section>
+    <!-- End of Section 3 -->
+
+    <!-- Section 4 -->
+    <section class="section-4" id="section-4">
+        <video autoplay muted loop id="myVideo">
+            <source src="images/aboutvideo.mp4" type="video/mp4">
+        </video>
+
+        <div class="content">
+            <a href="/about">About Juvi JEWERLY</a>
+        </div>
+    </section>
+    <!-- End of Section 5 -->
+
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <ul>
+                    <li><a href="/contact">Contact us</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                JUVI Copyright © 2023 Juvi - All rights reserved ||
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Check if the token exists
+            var token = localStorage.getItem("token");
+
+            // Get the Login and Register button elements
+            var loginButton = document.querySelector("a[href='login']");
+            var registerButton = document.querySelector("a[href='register']");
+
+            // Get the Logout button element
+            var accountButton = document.getElementById("myacount");
+            var logoutButton = document.getElementById("logout-button");
+            var cartButton = document.getElementById("cart-btn");
+
+            // If token exists, show the Logout button and handle the logout action
+            if (token) {
+                // Hide Login and Register buttons
+                if (loginButton) {
+                    loginButton.style.display = "none";
+                }
+                if (registerButton) {
+                    registerButton.style.display = "none";
+                }
+
+                // Show the Logout button and handle logout
+                if (logoutButton) {
+                    logoutButton.style.display = "block";
+                    cartButton.style.display = "block";
+                    accountButton.style.display = "none";
+                    logoutButton.addEventListener("click", function () {
+                        // Remove the token from localStorage
+                        localStorage.removeItem("token");
+                        // Redirect to login
+                        window.location.href = "login";
+                    });
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

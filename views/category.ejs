@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juvi JEWERLY</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="images/Icons/home-icon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  />
+  <script>
+    if(!localStorage["cart"])
+        localStorage.setItem("cart", JSON.stringify([]));
+  </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header navbar-logo">
+                <a class="navbar-brand" href="/">Juvi <b>JEWELRY</b></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right navbar-buttons">
+                    
+<% if (!userLoggedIn) { %>
+    <li><a href="login">Login</a></li>
+    <li><a href="register">Register</a></li>
+<% } else if (isAdmin == false){ %>
+    <li><a href="account" id="myacount">My Acount</a></li>
+    <li><a href="/logout" id="logout-button">Logout</a></li>
+<% } else if (isAdmin == true){ %>
+    <li><a href="admin" id="myacount">Admin panel</a></li>
+    <li><a href="account" id="myacount">My Acount</a></li>
+    <li><a href="/logout" id="logout-button">Logout</a></li>
+    
+<% } %>
+
+                    <li>
+                        <a href="cart" id="cart-btn" style="text-decoration: none; color: white; display: none;">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 3 -->
+    <section class="section-3" id="section-3">
+        <!-- Section 3 Heading -->
+        <h1 class="section-3-heading"><%= category.CategoryName %></h1>
+        <!-- End of Section 3 Heading -->
+
+        <!-- Section 3 Content -->
+        <div id="popup" class="container">
+            <div class="row">
+                <div id="popupBg"></div>
+                <div id="popupContent">
+                </div>
+            </div>
+        </div>
+        <style>
+            #popup {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                display: none;
+            }
+            #popupBg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                z-index: 1;
+                background-color: black;
+                opacity: 0.6;
+            }
+            #popupContent {
+                position:relative;
+                margin: 0 auto;
+                margin-top: 10%;
+                width: 50vw;
+                background-color: #9C8B73;
+                border: 2px solid white;
+                border-radius: 25px;
+                padding: 50px;
+                z-index: 2;
+            }
+            
+            #popupContent img {
+                max-width: 200px; /* Adjust the maximum width as needed */
+                height: auto; /* Maintain the aspect ratio */
+                border: 2px solid white;
+
+            }
+        </style>
+        <div class="container-categories">
+            <div class="row">
+                <script>
+                    const popUp = (element, item) => {
+                        const container = document.getElementById("popup");
+                        const content = document.getElementById("popupContent");
+                        const bg = document.getElementById("popupBg");
+                        const viewItem = document.getElementById(element);
+                        if(viewItem){
+                            content.innerHTML = viewItem.innerHTML;
+                            breakLine = document.createElement("br");
+                            content.appendChild(breakLine);
+                            container.style.display = "block"
+                            const amount = document.createElement("input");
+                            amount.type = "number";
+                            amount.min = 1;
+                            amount.value = 1;
+                            content.appendChild(amount);
+                            const addCartButton = document.createElement("button");
+                            addCartButton.innerHTML = "Add to cart";
+                            addCartButton.onclick = () => {
+                                if(amount.value < 1){
+                                    alert("Please enter a valid amount");
+                                    return;
+                                }
+                                const cart = JSON.parse(localStorage["cart"]);
+                                if(cart.length === 0){
+                                    item = item + ',"amount":"' + amount.value + '"}';
+                                    cart.push(JSON.parse(item));
+                                    localStorage.setItem("cart", JSON.stringify(cart));
+                                }else{
+                                    let found = false;
+                                    item = item + ',"amount":"' + amount.value + '"}';
+                                    item = JSON.parse(item);
+                                    for(let i = 0; i < cart.length; i ++){
+                                        if(cart[i].id === item.id){
+                                            cart[i].amount = parseInt(cart[i].amount) + parseInt(amount.value);
+                                            found = true;
+                                            break;
+                                        }
+                                    }
+                                    if(!found){
+                                        cart.push(item);
+                                    }
+                                    localStorage.setItem("cart", JSON.stringify(cart));
+                                }
+                                alert("Added to cart");
+                                container.style.display = "none";
+                                content.innerHTML = '';
+                            }
+                            content.appendChild(addCartButton);
+                            bg.addEventListener("click", () => {
+                                container.style.display = "none";
+                                content.innerHTML = '';
+                            });
+                        }
+                    }
+                    
+                </script>
+                <div class="container-categories product-grid">
+                <% for(let i = 0; i < products.length; i ++){ %>
+                    <script>
+                        let itemInfo = '{"id":"<%= products[i]._id %>","ProductName":"<%= products[i].ProductName %>","Description":"<%= products[i].Description %>","Price":"<%= products[i].Price %>","Picture":"<%= products[i].Picture %>"';
+                    </script>
+                    <div class="product-card col-4" id="p<%= i %>" onclick="popUp('p<%= i %>', itemInfo)">
+                        <div class="product-image">
+                        <img src="<%= products[i].Picture %>"/>
+                        </div>
+                        <div class="product-details">
+                        <h1><%= products[i].ProductName %></h1>
+                        <p><%= products[i].Description %></p>
+                        </div>
+                        <div class="product-price">
+                        <span><i class='fa fa-shekel'></i><%= products[i].Price %></span>
+                        </div>ֿ
+                    </div>
+                <% } %>
+            </div>
+        </div>
+        </div>
+        </div>
+        
+        <div class="slideshow"></div>
+
+    </section>
+    <!-- End of Section 3 -->
+
+    <footer>
+        <div class="footer">
+            <!-- <div class="row">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </div> -->
+
+            <div class="row">
+                <ul>
+                    <li><a href="contact">Contact us</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                JUVI Copyright © 2023 Juvi - All rights reserved ||
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Check if the token exists
+            var token = localStorage.getItem("token");
+
+            // Get the Login and Register button elements
+            var loginButton = document.querySelector("a[href='login']");
+            var registerButton = document.querySelector("a[href='register']");
+
+            // Get the Logout button element
+            var accountButton = document.getElementById("myacount");
+            var logoutButton = document.getElementById("logout-button");
+            var cartButton = document.getElementById("cart-btn");
+
+            // If token exists, show the Logout button and handle the logout action
+            if (token) {
+                // Hide Login and Register buttons
+                if (loginButton) {
+                    loginButton.style.display = "none";
+                }
+                if (registerButton) {
+                    registerButton.style.display = "none";
+                }
+
+                // Show the Logout button and handle logout
+                if (logoutButton) {
+                    logoutButton.style.display = "block";
+                    cartButton.style.display = "block";
+                    accountButton.style.display = "none";
+                    logoutButton.addEventListener("click", function () {
+                        // Remove the token from localStorage
+                        localStorage.removeItem("token");
+                        // Redirect to login
+                        window.location.href = "login";
+                    });
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

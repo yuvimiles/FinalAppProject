@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  text-decoration: none;
+  font-family: "Work Sans", sans-serif;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+.navbar-logo {
+  height: 50px;
+}
+.navbar-brand {
+  font-size: 2rem;
+  text-decoration: none;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 8px;
+  overflow: hidden;
+  
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.product-image {
+  height: 200px; /* Set the desired height for the image */
+  object-fit: cover; /* Maintain aspect ratio and cover container */
+  border-bottom: 1px solid #ccc;
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+.card-text {
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+.footer {
+  background-color: black;
+  padding: 1em 0;
+}
+
+.footer .row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  color: white;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.5em;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer ul li {
+  margin: 0 1em;
+}

@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "6508f50d34cacfa1b7a9340e"
+  },
+  "CategoryName": "Earings",
+  "Description": "text",
+  "Image": "images/sec3/earings3.jpg"
+},
+{
+  "_id": {
+    "$oid": "6508f60634cacfa1b7a9340f"
+  },
+  "CategoryName": "Rings",
+  "Description": "text",
+  "Image": "images/sec3/rings-1.jpeg"
+},
+{
+  "_id": {
+    "$oid": "6508f6e234cacfa1b7a93410"
+  },
+  "CategoryName": "Bracelets",
+  "Description": "text",
+  "Image": "images/sec3/braclets3.jpg"
+},
+{
+  "_id": {
+    "$oid": "6508f71334cacfa1b7a93411"
+  },
+  "CategoryName": "Necklaces",
+  "Description": "text",
+  "Image": "images/sec3/neckless.jpeg"
+}]

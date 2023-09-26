@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <title>Admin Dashboard</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="assets/js/admin.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="navbar-header navbar-logo">
+            <a class="navbar-brand" href="/">Juvi <b>JEWELRY</b></a>
+        </div>
+
+        <div class="menu-items">
+            <ul class="navLinks">
+                <li class="navList active" id="dashboardLink">
+                    <a href="#">
+                        <ion-icon name="home-outline"></ion-icon>
+                        <span class="links">Dashboard</span>
+                    </a>
+                </li>
+                <li class="navList" id="contentLink">
+                    <a href="#">
+                        <ion-icon name="folder-outline"></ion-icon>
+                        <span class="links">User</span>
+                    </a>
+                </li>
+                <li class="navList" id="productLink">
+                    <a href="#">
+                        <ion-icon name="analytics-outline"></ion-icon>
+                        <span class="links">Products</span>
+                    </a>
+                </li>
+                <li class="navList" id="categoryLink">
+                    <a href="#">
+                        <ion-icon name="apps-outline"></ion-icon>
+                        <span class="links">Categories</span>
+                    </a>
+                </li>
+                <li class="navList" id="orderLink">
+                    <a href="#">
+                        <ion-icon name="logo-dropbox"></ion-icon>
+                        <span class="links">Orders</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="bottom-link">
+                <li>
+                    <a href="#" id="logout-link">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                        <span class="links">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section id="dashboard" class="dashboard">
+        <div class="top">
+            <ion-icon class="navToggle" name="menu-outline"></ion-icon>
+        
+            <label id="username-label">Hi, <%= User.Username %><span id="user-name-placeholder"></span></label>
+        </div>
+        <style>
+            .box {
+                margin-top: 10px;
+            }
+        </style>
+        <div class="container">
+            <div class="overview">
+                <div class="title">
+                    <ion-icon name="speedometer"></ion-icon>
+                    <span class="text">Dashboard</span>
+                </div>
+                <div class="boxes">
+                    <div class="box box1">
+                        <ion-icon name="people-outline"></ion-icon>
+                        <span class="text">Total Users</span>
+                        <span class="number"><%= users.length %></span>
+                    </div>
+                    <div class="box box2">
+                        <ion-icon name="diamond-outline"></ion-icon>
+                        <span class="text">Total Products</span>
+                        <span class="number"><%= products.length %></span>
+                    </div>
+                    <div class="box box3">
+                        <ion-icon name="logo-dropbox"></ion-icon>
+                        <span class="text">Total Orders</span>
+                        <span class="number">
+                        <%= orders.length; %>
+                        </span>
+                    </div>
+                    <div class="box box2">
+                        <ion-icon name="newspaper-outline"></ion-icon>
+                        <span class="text">Total Pending Orders</span>
+                        <span class="number">
+                        <%= orders.filter((order) => {
+                                return order.Status === 'Pending for approval';
+                        }).length; %>
+                        </span>
+                    </div>
+                    <div class="box box3">
+                        <ion-icon name="cube-outline"></ion-icon>
+                        <span class="text">Total Approved Orders</span>
+                        <span class="number">
+                        <%= orders.filter((order) => {
+                                return order.Status === 'Approved';
+                        }).length; %>
+                        </span>
+                    </div>
+                    <div class="box box1">
+                        <ion-icon name="exit-outline"></ion-icon>
+                        <span class="text">Total Sent Orders</span>
+                        <span class="number">
+                        <%= orders.filter((order) => {
+                                return order.Status === 'Sent';
+                        }).length; %>
+                        </span>
+                    </div>
+                    <div class="box box3">
+                        <ion-icon name="happy-outline"></ion-icon>
+                        <span class="text">Total Delivered Orders</span>
+                        <span class="number">
+                        <%= orders.filter((order) => {
+                                return order.Status === 'Delivered';
+                        }).length; %>
+                        </span>
+                    </div>
+                    <div class="box box2">
+                        <ion-icon name="close-circle-outline"></ion-icon>
+                        <span class="text">Total Canceled Orders</span>
+                        <span class="number">
+                        <%= orders.filter((order) => {
+                                return order.Status === 'Canceled';
+                        }).length; %>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="5WeekData" style="display: none"><% let i = 0; for(; i < fiveWeeksSum.length; i ++){ %><div id="<%= i %>d3">{"id":"<%= fiveWeeksSum[i].id%>", "value":"<%= fiveWeeksSum[i].value%>", "region":"<%= fiveWeeksSum[i].region%>"}</div><% } %><div id="d3amount"><%= i%></div></div>
+            <div id="pieGraphData" style="display: none"><%
+                let ordered = 0, notOrdered = 0, j = 0, k = 0;
+                for(; j < users.length; j ++){
+                    let flag = false;
+                    for(let k = 0 ; k < orders.length; k ++) {
+                        if(orders[k].UserId == users[j]._id){
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if(flag)
+                        ordered ++;
+                    else
+                        notOrdered ++;
+                } %>
+                <div id="0pie">{"_id": "Not ordered users", "count": "<%= notOrdered %>"}</div>
+                <div id="1pie">{"_id": "Ordered users", "count": "<%= ordered %>"}</div>
+                <div id="d3pieamount">2</div></div>
+            <center>
+                <h1>Incomings per week:</h1>
+                <svg id="generalStats" class="graph"></svg><br /><hr /><br />
+                <h1>Users that ordered vs users that didn't:</h1><br />
+                <svg id="categoryProductsPieChart" class="graph"></svg><br />
+            </center>
+            <style>
+                .graph {
+                    background-color: #9C8B73;
+                    border-radius: 50px;
+                    transition: 0.2s;
+                }
+                .graph:hover {
+                    background-color: #9c8b738e;
+                }
+            </style>
+        </div>
+    </section>
+    <section id="content" class="content">
+        <div class="container">
+            <div class="user-list">
+                <h2>Users</h2>
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th class="data-title" style="text-align: center;">Name</th>
+                            <th class="data-title" style="text-align: center;">Change Password</th>
+                            <th class="data-title" style="text-align: center;">Admin</th>
+                            <th class="data-title" style="text-align: center;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% users.forEach(user => { %>
+                        <tr>
+                            <td style="text-align: center;"><%= user.Username %></td>
+                            <td style="text-align: center;">
+                                <label>Enter new password:</label>
+                                <input type="password" id="pw<%= user._id %>" placeholder="Leave empty for no action"/>
+                            </td>
+                            <td style="text-align: center;">
+                                <select id="ia<%= user._id %>">
+                                    <option value="true">True</option>
+                                    <%
+                                        let notAdmin = "";
+                                        if(!user.isAdmin){
+                                            notAdmin = "selected";
+                                        }
+                                    %>
+                                    <option value="false" <%= notAdmin %>>False</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button type="submit" onclick="updateUser('<%= user._id %>')" class="btn" style="margin: 5px auto">Update</button>
+                                <button type="submit" onclick="deleteUser('<%= user._id %>')" class="btn" style="margin: 5px auto"><ion-icon name="trash-outline"></ion-icon>Delete</button>
+                            </td>
+                        </tr>
+                        
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="product" class="product" style="display: none;">
+        <div class="container">
+            <div class="overview">
+                <h1 class="head">Products</h1>
+                <h2>Add New Product</h2>
+                <form id="productForm" method="get" onsubmit="return false;" enctype="multipart/form-data">
+                    <label for="ProductName">Product Name:</label>
+                    <input type="text" id="productName" name="ProductName" required><br />
+                    <label for="Category">Category Name:</label>
+                    <select id="Category" name="Category" required>
+                        <% for(let i = 0; i < categories.length; i++ ){ %>
+                            <option value="<%= categories[i]._id %>"><%= categories[i].CategoryName %></option>
+                        <% } %>
+                    </select><br />
+                    <label for="Price">Product Price:</label>
+                    <input type="number" id="Price" name="Price" min="0" required><br />
+                    <label for="productDescription">Product Description:</label>
+                    <textarea id="productDescription" name="productDescription" required></textarea><br />
+                    <label for="productPicture">Product Image:</label>
+                    <input type="text" placeholder="Enter URL" id="productPicture" name="productPicture" required><br />
+                    <button type="submit" id="addProduct" class="btn">Add</button><br />
+                </form>
+                <br />
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th class="data-title" style="text-align: center;">Name</th>
+                            <th class="data-title" style="text-align: center;">Picture</th>
+                            <th class="data-title" style="text-align: center;">Description</th>
+                            <th class="data-title" style="text-align: center;">Price</th>
+                            <th class="data-title" style="text-align: center;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% products.forEach(product => { %>
+                        <tr>
+                            <td style="text-align: center;"><%= product.ProductName %></td>
+                            <td style="text-align: center;"><img src="<%= product.Picture %>" width="100px" height="100px" /></td>
+                            <td style="text-align: center;"><%= product.Description %></td>
+                            <td style="text-align: center;"><%= product.Price %></td>
+                            <td>
+                                <button type="submit" onclick="deleteProduct('<%= product._id %>')" class="btn" style="margin: 5px auto"><ion-icon name="trash-outline"></ion-icon>Delete</button>
+                            </td>
+                        </tr>
+                        
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Popup -->
+        <div class="product-container">
+            <!-- Product cards will be dynamically added here -->
+        </div>
+        <div class="popup" id="editProductPopup">
+            <div class="popup-content">
+                <h2>Edit Product</h2>
+                <form id="editProductForm">
+                    <label for="editProductName">Product Name:</label>
+                    <input type="text" id="editProductName" required>
+                    <label for="editProductPrice">Product Price:</label>
+                    <input type="number" id="editProductPrice" required>
+                    <label for="editProductDesc">Product Description:</label>
+                    <textarea id="editProductDesc" rows="4"  required></textarea>
+                    <label for="editProductImage">Product Image:</label>
+                    <input type="file" accept="image/*" id="editProductImage" name="image">
+                    <button type="submit" class="btn">Update</button>
+                    <button type="button" class="btn" id="closeEditPopup">Close</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="category" class="product" style="display: none;">
+        <div class="container">
+            <div class="overview">
+                <h1 class="head">Category</h1>
+                <h2>Add New Category</h2>
+                <form id="categoryForm" onsubmit="return false;" method="get" enctype="multipart/form-data">
+                    <label for="CategoryName">Category Name:</label>
+                    <input type="text" id="categoryName" name="CategoryName" required><br />
+                    <label for="categoryDescription">Category Description:</label>
+                    <textarea id="categoryDescription" name="categoryDescription" required></textarea><br />
+                    <label for="categoryPicture">Category Image:</label>
+                    <input type="text" placeholder="Enter URL" id="categoryPicture" name="categoryPicture" required><br />
+                    <button type="submit" class="btn" id="addCategory">Add</button>
+                </form>
+                <br />
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th class="data-title" style="text-align: center;">Name</th>
+                            <th class="data-title" style="text-align: center;">Picture</th>
+                            <th class="data-title" style="text-align: center;">Description</th>
+                            <th class="data-title" style="text-align: center;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% categories.forEach(category => { %>
+                        <tr>
+                            <td style="text-align: center;"><%= category.CategoryName %></td>
+                            <td style="text-align: center;"><img src="<%= category.Image %>" width="100px" height="100px" /></td>
+                            <td style="text-align: center;"><%= category.Description %></td>
+                            <td>
+                                <button type="submit" onclick="deleteCategory('<%= category._id %>')" class="btn" style="margin: 5px auto"><ion-icon name="trash-outline"></ion-icon>Delete</button>
+                            </td>
+                        </tr>
+                        
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+    <section id="order" class="product" style="display: none;">
+        <div class="container">
+            <div class="overview">
+                <h1 class="head">Orders</h1>
+                <br />
+                <div id="orderDetails" style="display: none; margin-bottom: 30px; border-radius: 25px; border: 1px solid black; padding: 20px; color: white; text-align: center; background-color: #9C8B73; "></div>
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th class="data-title" style="text-align: center;">User</th>
+                            <th class="data-title" style="text-align: center;">Date</th>
+                            <th class="data-title" style="text-align: center;">Status</th>
+                            <th class="data-title" style="text-align: center;">Price</th>
+                            <th class="data-title" style="text-align: center;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% orders.forEach(order => { %>
+                        <tr>
+                            <td style="text-align: center;">
+                                <%= users.filter((user) => {
+                                    return user._id == order.UserId;
+                                })[0].Username %>
+                            </td>
+                            <td style="text-align: center;"><%= order.Date %></td>
+                            <td>
+                                <select id="<%= order._id %>status">
+                                    <% if(order.Status === "Pending for approval"){ %>
+                                        <option value="Pending for approval" selected>Pending For Approval</option>
+                                    <% }else{ %>
+                                        <option value="Pending for approval">Pending For Approval</option>
+                                    <% } %>
+                                    <% if(order.Status === "Approved"){ %>
+                                        <option value="Approved" selected>Approved</option>
+                                    <% }else{ %>
+                                        <option value="Approved">Approved</option>
+                                    <% } %>
+                                    <% if(order.Status === "Sent"){ %>
+                                        <option value="Sent" selected>Sent</option>
+                                    <% }else{ %>
+                                        <option value="Sent">Sent</option>
+                                    <% } %>
+                                    <% if(order.Status === "Delivered"){ %>
+                                        <option value="Delivered" selected>Delivered</option>
+                                    <% }else{ %>
+                                        <option value="Dashboard">Delivered</option>
+                                    <% } %>
+                                    <option value="Canceled" disabled></option>
+                                    <% if(order.Status === "Canceled"){ %>
+                                        <option value="Canceled" selected>Canceled</option>
+                                    <% }else{ %>
+                                        <option value="Canceled">Canceled</option>
+                                    <% } %>
+                                </select>
+                                <td style="text-align: center;"><%= order.Price %></td>
+                            </td>
+                            <td>
+                                <button type="submit" onclick="updateOrder('<%= order._id %>')" class="btn" style="margin: 5px auto">Update</button>
+                                <button type="submit" class="btn" style="margin: 5px auto" onclick="viewDetails('<h5>Order #<%= order._id %></h5><p>Status: <%= order.Status %></p><p>Date: <%= order.Date %></p><p>Address: <%= order.Address %></p><p>City: <%= order.City %></p><p>Country: <%= order.Country %></p><p>Zip: <%= order.Zip %></p><h4>Ordered Products</h4><div><% for(let j = 0; j < order.Products.length; j ++) {let products = order.Products;%><div><div><span>Quantity: <%= products[j].amount %></span></div></div><div><p><%= products[j].ProductName %></p></div></div><% } %></div>')">View Details</button>
+                            </td>
+                        </tr>                        
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://d3js.org/d3.v5.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-axis@3" defer></script>
+    <script type="module" src="../assets/js/D3Custom.js" defer></script>
+</body>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .user-list {
+        margin-top: 20px;
+    }
+
+    .user-table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .user-table th, .user-table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .user-table th {
+        background-color: #f2f2f2;
+        text-align: left;
+    }
+
+    .user-table tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    .user-table td:last-child {
+        text-align: center;
+    }
+
+    .edit-button, .delete-button {
+        padding: 5px 10px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    .delete-button {
+        background-color: #dc3545;
+    }
+</style>
+</html>
+    
+    
+    
+
+    
+
+
+
+
+

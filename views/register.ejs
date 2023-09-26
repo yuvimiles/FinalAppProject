@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/shop.css">
+    <script src="assets/js/register.js"></script>
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: black;">
+        <div class="container">
+            <div class="navbar-header navbar-logo">
+                <a class="navbar-brand" href="/">Juvi <b>JEWELRY</b></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container1">
+        <input type="checkbox" id="flip">
+        <div class="cover">
+            <div class="front">
+                <img src="images/frontImg.jpg" alt="">
+                <div class="text">
+                    <span class="text-1">Every new friend is a <br> new adventure</span>
+                    <span class="text-2">Let's get connected</span>
+                </div>
+            </div>
+            <div class="back">
+                <img class="backImg" src="images/backImg.jpg" alt="">
+                <div class="text">
+                    <span class="text-1">Complete miles of journey <br> with one step</span>
+                    <span class="text-2">Let's get started</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="forms">
+            <div class="form-content">
+                <!-- Signup form will come first -->
+                <div class="signup-form">
+                    <div class="title">Signup</div>
+                    <form action="/auth" method="post">
+                        <input type="hidden" name="formType" value="register">
+                        <div class="input-boxes">
+                            <div class="input-box">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" name="phoneNumber" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fas fa-address-card"></i>
+                                <input type="tel" name="address" placeholder="Enter your address" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fas fa-user"></i>
+                                <input type="text" name="username" placeholder="Enter your username" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" name="password" placeholder="Enter your password" required>
+                            </div>
+                            <% if (error) { %>
+                                <p style="color:red;" ><%= error %></p>
+                                <% } %>
+                            <div class="button input-box">
+                                <input type="submit" value="Sigup">
+                            </div>
+                            <div class="text sign-up-text">Already have an account? <label for="flip" id="loginNowButton">Login now</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Login form will come after -->
+                <div class="login-form">
+                    <div class="title">Login</div>
+                    <form action="/auth" method="post">
+                        <input type="hidden" name="formType" value="login">
+                        <div class="input-boxes">
+                            <div class="input-box">
+                                <i class="fas fa-envelope"></i>
+                                <input type="username"  name="username"  placeholder="Enter your username" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" name="password" placeholder="Enter your password" required>
+                            </div>
+                          
+                            <div class="text"><a href="#">Forgot password?</a></div>
+                            <% if (error) { %>
+                                <p style="color:red;" id="errorDisplay" ><%= error %></p>
+                                <% } %>
+                            <div class="button input-box">
+                                
+                                <input type="submit" value="Login">
+                            </div>
+                            <div class="text sign-up-text">Don't have an account? <label for="flip" >Signup now</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+
+</html>
