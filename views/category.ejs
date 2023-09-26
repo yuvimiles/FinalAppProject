@@ -129,6 +129,8 @@
                             const addCartButton = document.createElement("button");
                             addCartButton.innerHTML = "Add to cart";
                             addCartButton.onclick = () => {
+
+                                item = document.getElementById("i"+element).innerHTML;
                                 if(amount.value < 1){
                                     alert("Please enter a valid amount");
                                     return;
@@ -165,12 +167,14 @@
                             });
                         }
                     }
-                    
+                    let itemInfo;
                 </script>
                 <div class="container-categories product-grid">
                 <% for(let i = 0; i < products.length; i ++){ %>
+                    <div id="ip<%= i %>" style="display: none"></div>
                     <script>
-                        let itemInfo = '{"id":"<%= products[i]._id %>","ProductName":"<%= products[i].ProductName %>","Description":"<%= products[i].Description %>","Price":"<%= products[i].Price %>","Picture":"<%= products[i].Picture %>"';
+                        itemInfo = '{"id":"<%= products[i]._id %>","ProductName":"<%= products[i].ProductName %>","Description":"<%= products[i].Description %>","Price":"<%= products[i].Price %>","Picture":"<%= products[i].Picture %>"';
+                        document.getElementById('ip<%= i %>').innerHTML = itemInfo ;
                     </script>
                     <div class="product-card col-4" id="p<%= i %>" onclick="popUp('p<%= i %>', itemInfo)">
                         <div class="product-image">
